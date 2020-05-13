@@ -65,7 +65,7 @@ rating.init('#rating', {
         console.log(this);
         console.log(nums + '/' + total);
     },
-    // chosen:function(nums,total){
-    //     console.log(nums + '/' + total);
-    // }
+    chosen:function(nums,total){
+        console.log(nums + '/' + total);
+    }
 })

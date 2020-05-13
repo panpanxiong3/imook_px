@@ -1,2 +1,2 @@
-# imook_px
-慕课网前端练习
+# javascript 前端练习
+Javascript前端自我总结

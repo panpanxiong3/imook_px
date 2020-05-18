@@ -1,0 +1,38 @@
+##构造函数##
+
+构造函数始终都应该以一个大写字母开头，非构造函数则以小字母开头
+
+**constructor** 属性最初是用来标识对象类型的
+
+##原型模式##
+
+我们创建的每个函数都有一个prototype(原型)属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法 </br>
+使用原型对象的好处就是让所有的对象共享其所包含的属性和方法
+
+##组合使用构造函数模式和原型模式##
+
+```
+function Person(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.friends = ["Shelby","Json"];
+}
+
+Person.prototype = {
+    constructor: Person,
+    sayName : function(){
+        alert(this.name);
+    }
+}
+
+var person1 = new Person("Nichoals",29,"software Engineer");
+var person2 = new Person("Grey",18,"Student");
+
+person1.friends.push("Van");
+
+alert(person1.friends); //"Shelby","Json","Van"
+alert(person2.friends); //"Shelby","Json"
+```
+
+在这个例子中，实例属性都是在构造函数中定义的，而由所有实例属性的constructor和方法sayName()则是在原型中的定义的.
